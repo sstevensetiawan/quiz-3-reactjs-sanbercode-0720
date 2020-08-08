@@ -1,0 +1,19 @@
+h1{
+    text-align: 'center';
+    padding-top:'50px';
+}
+
+table{
+    margin : 0 auto;
+    width : 50%;
+    border : 1px solid;
+    background-color: white;
+}
+
+tbody{
+    text-align: center;
+}
+
+thead{
+    text-align: center;
+}
