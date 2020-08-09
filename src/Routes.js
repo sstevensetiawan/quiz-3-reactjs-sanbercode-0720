@@ -3,12 +3,14 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About.js";
 import MovieListEditor from "./MovieListEditor";
-import LoginForm from "./LoginForm";
 import Navigation from './Navigation'
+import LoginForm from './LoginForm'
+import {LoginProvider} from "./LoginContext"
 
 const Routes = () => {
     return (
         <>
+        <LoginProvider>
             <Navigation />
             <Switch>
                 <Route exact path="/">
@@ -20,10 +22,11 @@ const Routes = () => {
                 <Route path="/movielisteditor">
                     <MovieListEditor />
                 </Route>
-                <Route path="/loginform">
+                <Route path="/Login">
                     <LoginForm />
                 </Route>
             </Switch>
+        </LoginProvider>
         </>
     );
 };

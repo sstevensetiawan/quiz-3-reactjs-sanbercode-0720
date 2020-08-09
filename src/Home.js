@@ -25,7 +25,7 @@ class Home extends Component {
             <h1>Best Film List</h1>
             <div id="article-list">
                 {this.state.daftarFilm.map(daftar =>
-                    <div>
+                  <div>
                     <a href=""><h3>{daftar.title}</h3></a><br></br>
                     <p>
                         <b>Rating : </b>{daftar.rating}<br></br>
@@ -35,7 +35,8 @@ class Home extends Component {
                         <b>Description : </b>{daftar.description}
                     </p>
                     <br></br>
-                    </div>
+                  <article></article>
+                  </div>
                 )}
             </div>
         </section>

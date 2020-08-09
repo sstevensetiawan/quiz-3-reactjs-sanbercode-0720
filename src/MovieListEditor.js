@@ -4,13 +4,12 @@ import './public/css/styletable.css';
 
 const MovieListEditor = () => {
     const [daftarFilm, setDaftarFilm] = useState(null)
-    const [inputData, setInputData] = useState({title: "", description: "", year: 0, duration: 1, genre:"", rating:1})
+    const [inputData, setInputData] = useState({title: "", description: "", year: 2020, duration: 1, genre:"", rating:1})
     const [statusForm ,setStatusForm] = useState("Insert")
     const [indexOfForm, setIndexOfForm] = useState(-1)
 
     const handleChange = (event) =>{
         let typeOfInput = event.target.name
-    
         switch (typeOfInput){
             case "title":{
                 setInputData({...inputData, title: event.target.value});
@@ -21,7 +20,12 @@ const MovieListEditor = () => {
                 break
             }
             case "year":{
-                setInputData({...inputData, year: event.target.value});
+                if(event.target.value < 1){
+                    setInputData({...inputData, year: 1});
+                }
+                else{
+                    setInputData({...inputData, year: event.target.value});
+                }
                 break
             }
             case "duration":{
@@ -92,7 +96,7 @@ const MovieListEditor = () => {
         }
         setStatusForm("Insert")
         setIndexOfForm(-1)
-        setInputData({title: "", description: "", year: 0, duration: 1, genre:"", rating:1})
+        setInputData({title: "", description: "", year: 2020, duration: 1, genre:"", rating:1})
     }
 
     const handleEdit = (event) =>{
